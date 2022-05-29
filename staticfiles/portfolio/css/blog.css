@@ -1,0 +1,111 @@
+.postBox{
+    display: block;
+    text-align: left;
+    padding: 20px;
+    color: gray;
+    background-color: #cbe7d9;
+    border-radius: 8px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.postBox h3{
+    font-family: 'Smooch', cursive;
+    font-size: 32px;
+}
+.postBox p{
+    font-family: 'Odibee Sans', cursive;
+    margin-top: 15px;
+}
+.postBox_autor{
+    margin-left: 65vh;
+    padding-top: 15px;
+    font-size: 12px;
+}
+.parallax_blog {
+    background-image: url("../images/img-blog/backgroung.jpg");
+    min-height: 85vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+.h2_blog{
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 10vh;
+    color: #d0cdcd;
+    letter-spacing: 20px;
+}
+.newPostBox{
+    display: block;
+    text-align: left;
+    padding: 20px;
+    color: gray;
+    background-color: #cbe7d9;
+    border-radius: 3px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.btn {
+    position: relative;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    display: block;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    line-height: 1;
+    left: 5%;
+    right: 50%;
+    margin-bottom: 20px;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.btn:hover, .btn:focus {
+    color: #bbb6b6;
+    outline: 0;
+}
+.btn {
+    border-color: #28941b;
+    color: #bbb6b6;
+    background-image: -webkit-linear-gradient(45deg, #263a28 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #28941b 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 900ms ease-in-out;
+}
+.btn:hover {
+    background-position: 0;
+}
+.edit_btn{
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    line-height: 0.2;
+    left: 92%;
+    width: 100px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}

@@ -1,0 +1,22 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    {% load static %}
+    <div class = "contain">
+        {% for cadeira in cadeiras %}
+            <div class="box">
+                <img src="{{ cadeira.imagem.url }} ">
+                <h3 class="center">{{ cadeira.nome}}</h3>
+                <div>
+                    <p>{{ cadeira.descricao }}</p>
+                    <p>{{ cadeira.ano }}ºAno</p>
+                    <p>{{ cadeira.docente_teorica.nome}}</p>
+                    <p>{{ cadeira.docentes_praticas.nome }}</p>
+                    <p>{{ cadeira.linguagens }}</p>
+                    <p>{{ cadeira.projetos.nome }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock main %}

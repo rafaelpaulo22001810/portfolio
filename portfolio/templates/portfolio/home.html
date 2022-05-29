@@ -1,0 +1,29 @@
+{% extends 'portfolio/layout.html' %}
+{% block main %}
+    {% load static %}
+    <section class="showcase">
+        <video src="{% static 'portfolio/images/img-heropage/video.mp4' %}" muted loop autoplay></video>
+    </section>
+    <div class="text">
+        <h2>Portfolio</h2>
+        <h3>All about me</h3>
+        <p>Este website contém todas as informações sobre a minha pessoa, projetos e objetivos</p>
+        <a href="#">See More</a>
+    </div>
+
+    <div class="parallax"></div>
+
+    <article class="about">
+        <h2>About me</h2>
+        <p>Olá sou o Rafael, estou a tirar o curso de Engenheria Informática na Universidade Lusófona de Humanidades e Tecnologia.
+        <br>
+        O que mais me cativa neste curso é mesmo a facto de necessitar-mos de ser nós a querer aprender.
+        <br>
+        No fim da licenciatura pretendo tirar o Mestrado naquilo que quero fazer no futuro, isto é, quero tirar o Mestrado em CyberSecurity.
+        <br>
+        Os meus hobbies, fora do estudo, são treinar e sair com os meus amigos.</p>
+    </article>
+
+        <div class="parallax"></div>
+
+{% endblock %}

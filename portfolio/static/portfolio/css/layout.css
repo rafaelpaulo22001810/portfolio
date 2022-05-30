@@ -65,7 +65,7 @@ footer {
 
 }
 .box{
-    margin-top: 100px;
+    margin-top: 150px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
@@ -90,7 +90,7 @@ footer {
     transition: all .4s;
 }
 .box:hover img{
-    margin-top: -250px;
+    margin-top: -200px;
 }
 
 .box > div{
@@ -102,9 +102,8 @@ footer {
     font-size: 0.6em;
     font-family: 'Font Awesome 5 Free';
     font-weight: 700;
-    top: 250px;
+    top: 350px;
 }
-
 
 .center{
     position: relative;
@@ -119,7 +118,7 @@ footer {
 }
 @keyframes moveUp {
     to{
-        top: 210px;
+        top: 280px;
     }
 }
 .section{

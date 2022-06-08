@@ -8,12 +8,24 @@
                 <img src="{{ cadeira.imagem.url }} ">
                 <h3 class="center">{{ cadeira.nome}}</h3>
                 <div>
-                    <p>{{ cadeira.descricao }}</p>
-                    <p>{{ cadeira.ano }}ºAno</p>
-                    <p>{{ cadeira.docente_teorica.nome}}</p>
-                    <p>{{ cadeira.docentes_praticas.nome }}</p>
-                    <p>{{ cadeira.linguagens }}</p>
-                    <p>{{ cadeira.projetos.nome }}</p>
+                    <p>-{{ cadeira.descricao }}</p>
+                    <p>-{{ cadeira.ano }}ºAno</p>
+                    <p>-{{ cadeira.docente_teorica.nome}}</p>
+                    <p>-{{ cadeira.docente_pratica }}</p>
+                    <p>-Projeto realizado: {{ cadeira.projetos.nome }}</p>
+                    {% if cadeira.classificacao == 0 %}
+                        <p>😭</p>
+                    {% elif cadeira.classificacao == 1 %}
+                        <p>✨</p>
+                    {% elif cadeira.classificacao == 2 %}
+                        <p>✨✨</p>
+                    {% elif cadeira.classificacao == 3 %}
+                        <p>✨✨✨</p>
+                    {% elif cadeira.classificacao == 4 %}
+                        <p>✨✨✨✨</p>
+                    {% elif cadeira.classificacao == 5 %}
+                        <p>✨✨✨✨✨</p>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}

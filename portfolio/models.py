@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
@@ -15,7 +16,7 @@ class Post(models.Model):
 
 class PontuacaoQuizz(models.Model):
     nome = models.CharField(max_length=30)
-    pontuacao = models.IntegerField(max_length=10)
+    pontuacao = models.IntegerField()
 
     def __str__(self):
         return self.nome
@@ -45,12 +46,13 @@ class Projeto(models.Model):
 
 class Cadeira(models.Model):
     nome = models.CharField(max_length=20)
-    ano = models.IntegerField()
+    ano = models.IntegerField(default=0)
     descricao = models.TextField()
     linguagens = models.ManyToManyField(Linguagem)
-    docente_teorica = models.ForeignKey(Professor, on_delete=models.CASCADE)
-    docentes_praticas = models.ManyToManyField(Professor, related_name='caderias')
-    projetos = models.ManyToManyField(Projeto)
+    docente_teorica = models.ForeignKey(Professor, on_delete=models.CASCADE, default='')
+    docente_pratica = models.ForeignKey(Professor, related_name='caderias', on_delete=models.CASCADE, default='')
+    projetos = models.ForeignKey(Projeto, on_delete=models.CASCADE, default='')
+    classificacao = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
     imagem = models.ImageField(blank=True, upload_to='portfolio\static\portfolio\images\img_licen')
 
     def __str__(self):

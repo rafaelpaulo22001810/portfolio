@@ -24,7 +24,7 @@ def home_page_view(request):
 
 
 def licenciatura_page_view(request):
-    context = {'cadeiras':Cadeira.objects.all()}
+    context = {'cadeiras': Cadeira.objects.all()}
     return render(request, 'portfolio/licenciatura.html', context)
 
 

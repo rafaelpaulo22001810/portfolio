@@ -1,5 +1,7 @@
 import datetime
 import matplotlib
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -37,6 +39,7 @@ def blog_page_view(request):
     return render(request, 'portfolio/blog.html', context)
 
 
+@login_required
 def newpost_page_view(request):
     form = PostForm(request.POST or None)
     if form.is_valid():
@@ -48,6 +51,7 @@ def newpost_page_view(request):
     return render(request, 'portfolio/newPost.html', context)
 
 
+@login_required
 def editar_page_view(request, post_id):
     post = Post.objects.get(pk=post_id)
     form = PostForm(request.POST or None, instance=post)
@@ -97,7 +101,30 @@ def pontuacao_quizz(request):
     return score
 
 
-class EmpImageDisplay(DetailView):
-    model = Cadeira
-    template_name = 'licenciatura.html'
-    context_object_name = 'emp'
+def login_page_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(
+            request,
+            username=username,
+            password=password)
+
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse('portfolio:home'))
+        else:
+            return render(request, 'portfolio/login.html', {
+                'message': 'Credenciais invalidas.'
+            })
+
+    return render(request, 'portfolio/login.html')
+
+
+def logout_page_view(request):
+    logout(request)
+
+    return render(request, 'portfolio/login.html', {
+        'message': 'Foi desconetado.'
+    })

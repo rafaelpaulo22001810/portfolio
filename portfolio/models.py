@@ -4,6 +4,10 @@ from django.db import models
 
 # Create your models here.
 
+def resolution_path(instance, filename):
+    return f'users/{instance.id}/'
+
+
 class Post(models.Model):
     titulo = models.CharField(max_length=30)
     autor = models.CharField(max_length=30)
@@ -53,7 +57,7 @@ class Cadeira(models.Model):
     docente_pratica = models.ForeignKey(Professor, related_name='caderias', on_delete=models.CASCADE, default='')
     projetos = models.ForeignKey(Projeto, on_delete=models.CASCADE, default='')
     classificacao = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
-    imagem = models.ImageField(blank=True, upload_to='portfolio\static\portfolio\images\img_licen')
+    imagem = models.ImageField(blank=True, upload_to=resolution_path)
 
     def __str__(self):
         return self.nome

@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'portfolio',
 ]
 
+INSTALLED_APPS += [
+   'cloudinary_storage',
+   'cloudinary',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -126,7 +131,9 @@ STATIC_URL = '/portfolio/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/portfolio/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -136,4 +143,8 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
 
-
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME': "rafaelpaulo",
+  'API_KEY': "381174591249627",
+  'API_SECRET': "tgWrgIWKUFMcVMfpGuLWu7mUHrM",
+}

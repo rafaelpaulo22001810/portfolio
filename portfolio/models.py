@@ -7,7 +7,7 @@ from django.db import models
 class Post(models.Model):
     titulo = models.CharField(max_length=30)
     autor = models.CharField(max_length=30)
-    conteudo = models.CharField(max_length=500)
+    conteudo = models.TextField(max_length=500)
     data = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

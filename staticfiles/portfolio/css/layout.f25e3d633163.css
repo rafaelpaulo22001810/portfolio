@@ -105,6 +105,10 @@ footer {
     top: 250px;
 }
 
+.new{
+    position: relative;
+    text-align: center;
+}
 
 .center{
     position: relative;

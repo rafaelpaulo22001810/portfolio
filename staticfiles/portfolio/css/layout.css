@@ -274,4 +274,22 @@ input[type="radio"]:checked + label {
     left: 50%;
     transform: translate(-50%, 0%);
 }
+.new{
+    position: relative;
+    text-align: center;
+}
+
+.boxNew{
+    margin-top: 230px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    width: 450px;
+    height: 480px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.212);
+    background: white;
+    position: relative;
+    transition: all .4s;
+    border-radius: 20px;
+}
 

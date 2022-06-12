@@ -11,6 +11,7 @@ from matplotlib import pyplot as plt
 
 from .forms import PostForm
 from .forms import CadeiraForm
+from .forms import ProjectForm
 from .models import Post
 from .models import PontuacaoQuizz
 from .models import Cadeira
@@ -31,8 +32,7 @@ def licenciatura_page_view(request):
     context = {'cadeiras': Cadeira.objects.all()}
     return render(request, 'portfolio/licenciatura.html', context)
 
-def forecast(request):
-    return render(request, 'portfolio/forecast.html')
+
 def new_cadeira_page_view(request):
     form = CadeiraForm(request.POST or None)
     if form.is_valid():
@@ -60,6 +60,30 @@ def editar_cadeira_page_view(request, cadeira_id):
 def projetos_page_view(request):
     context = {'projetos': Projeto.objects.all()}
     return render(request, 'portfolio/projetos.html', context)
+
+
+def new_project_page_view(request):
+    form = ProjectForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:projetos'))
+
+    context = {'form': form}
+
+    return render(request, 'portfolio/newProjeto.html', context)
+
+
+def editar_project_page_view(request, project_id):
+    projeto = Projeto.objects.get(pk=project_id)
+    form = ProjectForm(request.POST or None, instance=projeto)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:licenciatura'))
+
+    context = {'form': form, 'projeto_id': project_id}
+
+    return render(request, 'portfolio/editar_Projeto.html', context)
 
 
 def blog_page_view(request):

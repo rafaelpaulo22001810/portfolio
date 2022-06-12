@@ -95,7 +95,25 @@
     display: block;
     font-size: 1rem;
     line-height: 0.2;
-    top: 90%;
+    top: 80%;
+    left: 93%;
+    width: 100px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.edit_btn2{
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    line-height: 0.2;
+    top: 97.25%;
     width: 100px;
     text-decoration: none;
     text-align: center;

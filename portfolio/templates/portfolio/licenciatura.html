@@ -34,11 +34,11 @@
             </div>
         {% endfor %}
         {% if request.user.is_authenticated %}
-            <span class="boxNew">
+            <div class="Pre_box">
                 <div class="new">
                         <a href="{% url 'portfolio:newcadeira' %}" class="btn btn">Nova Cadeira</a>
                 </div>
-            </span>
+            </div>
         {% endif %}
     </div>
 

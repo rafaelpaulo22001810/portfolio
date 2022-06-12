@@ -21,9 +21,11 @@
     padding-top: 15px;
     font-size: 12px;
 }
+
 .parallax_blog {
     background-image: url("../images/img-blog/backgroung.jpg");
     min-height: 85vh;
+    z-index: -1;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,19 +54,11 @@
 .btn {
     position: relative;
     box-sizing: border-box;
-    appearance: none;
-    background-color: transparent;
     border: 2px solid #e74c3c;
     border-radius: 0.6em;
     color: #e74c3c;
     display: block;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
     font-size: 1rem;
-    line-height: 1;
-    left: 5%;
-    right: 50%;
     margin-bottom: 20px;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
@@ -101,7 +95,7 @@
     display: block;
     font-size: 1rem;
     line-height: 0.2;
-    left: 92%;
+    top: 90%;
     width: 100px;
     text-decoration: none;
     text-align: center;

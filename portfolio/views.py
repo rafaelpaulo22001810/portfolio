@@ -31,7 +31,8 @@ def licenciatura_page_view(request):
     context = {'cadeiras': Cadeira.objects.all()}
     return render(request, 'portfolio/licenciatura.html', context)
 
-
+def forecast(request):
+    return render(request, 'portfolio/forecast.html')
 def new_cadeira_page_view(request):
     form = CadeiraForm(request.POST or None)
     if form.is_valid():

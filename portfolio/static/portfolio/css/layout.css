@@ -77,6 +77,13 @@ footer {
     transition: all .4s;
     border-radius: 20px;
 }
+.box p{
+    font-family: 'Poppins',sans-serif;
+    font-size: 0.9rem;
+}
+.Pre_box{
+    margin-top: 150px;
+}
 .box img{
     position: absolute;
     object-fit: cover;
@@ -102,7 +109,7 @@ footer {
     font-size: 0.6em;
     font-family: 'Font Awesome 5 Free';
     font-weight: 700;
-    top: 350px;
+    top: 330px;
 }
 
 .center{

@@ -6,17 +6,17 @@
     <div class="parallax_blog">
         <div class="h2_blog">Blog</div>
         <br>
-        {% if request.user.is_authenticated %}
-            <a href="{% url 'portfolio:newpost' %}" class="btn btn">Novo Post</a>
-        {% endif %}
+
+        <a href="{% url 'portfolio:newpost' %}" class="btn btn">Novo Post</a>
+
         {% for post in posts %}
             <div class="postBox">
                 <h3>{{ post.titulo }}</h3>
                 <p>{{ post.conteudo }}</p>
                 <p class="postBox_autor">{{ post.autor }} - {{ post.data }}</p>
-                {% if request.user.is_authenticated %}
-                    <a href="{% url 'portfolio:editar' post.id %} " class="btn edit_btn">Editar</a>
-                {% endif %}
+
+                <a href="{% url 'portfolio:editar' post.id %} " class="btn edit_btn">Editar</a>
+
             </div>
             <br><br>
         {% endfor %}

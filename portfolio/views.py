@@ -10,6 +10,7 @@ from django.views.generic import DetailView
 from matplotlib import pyplot as plt
 
 from .forms import PostForm
+from .forms import CadeiraForm
 from .models import Post
 from .models import PontuacaoQuizz
 from .models import Cadeira
@@ -30,6 +31,30 @@ def licenciatura_page_view(request):
     return render(request, 'portfolio/licenciatura.html', context)
 
 
+def new_cadeira_page_view(request):
+    form = CadeiraForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:licenciatura'))
+
+    context = {'form': form}
+
+    return render(request, 'portfolio/newCadeira.html', context)
+
+
+def editar_cadeira_page_view(request, cadeira_id):
+    cadeira = Cadeira.objects.get(pk=cadeira_id)
+    form = CadeiraForm(request.POST or None, instance=cadeira)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:licenciatura'))
+
+    context = {'form': form, 'cadeira_id': cadeira_id}
+
+    return render(request, 'portfolio/editar_Cadeira.html', context)
+
+
 def projetos_page_view(request):
     return render(request, 'portfolio/projetos.html')
 
@@ -39,7 +64,6 @@ def blog_page_view(request):
     return render(request, 'portfolio/blog.html', context)
 
 
-@login_required
 def newpost_page_view(request):
     form = PostForm(request.POST or None)
     if form.is_valid():
@@ -51,7 +75,6 @@ def newpost_page_view(request):
     return render(request, 'portfolio/newPost.html', context)
 
 
-@login_required
 def editar_page_view(request, post_id):
     post = Post.objects.get(pk=post_id)
     form = PostForm(request.POST or None, instance=post)

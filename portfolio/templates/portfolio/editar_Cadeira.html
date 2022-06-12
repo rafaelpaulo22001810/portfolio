@@ -1,0 +1,16 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+
+{% block main %}
+    <div class="parallax_blog">
+        <br>
+        <div class="h2_blog">Editar Cadeira</div>
+        <div class="newPostBox">
+            <form  action="{% url 'portfolio:editcadeira' cadeira_id %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Postar">
+            </form>
+        </div>
+    </div>
+{% endblock %}

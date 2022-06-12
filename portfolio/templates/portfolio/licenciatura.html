@@ -2,6 +2,9 @@
 
 {% block main %}
     {% load static %}
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'portfolio:newcadeira' %}" class="btn btn">Nova Cadeira</a>
+    {% endif %}
     <div class = "contain">
         {% for cadeira in cadeiras %}
             <div class="box">
@@ -27,6 +30,9 @@
                         <p>✨✨✨✨✨</p>
                     {% endif %}
                 </div>
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'portfolio:editcadeira' cadeira.id %} " class="btn edit_btn">Editar</a>
+            {% endif %}
             </div>
         {% endfor %}
     </div>

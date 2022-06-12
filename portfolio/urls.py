@@ -14,4 +14,7 @@ urlpatterns = [
     path('quizz', views.quizz_page_view, name='quizz'),
     path('login', views.login_page_view, name='login'),
     path('logout', views.logout_page_view, name='logout'),
+    path('newcadeira', views.new_cadeira_page_view, name='newcadeira'),
+    path('editcadeira/<int:cadeira_id>', views.editar_cadeira_page_view, name='editcadeira'),
+
 ]

@@ -16,5 +16,7 @@ urlpatterns = [
     path('logout', views.logout_page_view, name='logout'),
     path('newcadeira', views.new_cadeira_page_view, name='newcadeira'),
     path('editcadeira/<int:cadeira_id>', views.editar_cadeira_page_view, name='editcadeira'),
+    path('newprojeto', views.new_project_page_view, name='newprojeto'),
+    path('editprojeto/<int:projeto_id>', views.editar_project_page_view, name='editprojeto'),
 
 ]

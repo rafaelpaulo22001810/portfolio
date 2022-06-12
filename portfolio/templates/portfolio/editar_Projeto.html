@@ -5,7 +5,7 @@
     <div class="parallax_blog">
         <br>
         <div class="h2_blog">Editar Cadeira</div>
-        <div class="newProjectBox">
+        <div class="newPostBox">
             <form  action="{% url 'portfolio:editprojeto' projeto_id %}" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}

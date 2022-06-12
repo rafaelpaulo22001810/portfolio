@@ -2,13 +2,14 @@
 {% block main %}
     {% load static %}
     <div class="contain">
-        <div class="box">
-            <img src={% static 'portfolio/images/img_proj/Carro.jpg' %}>
-            <p class="center">Carro telecomandado</p>
-        </div>
-        <div class="box">
-                <img src={% static 'portfolio/images/img_proj/xadrez.jpeg' %}>
-                <p class="center">Xadrez</p>
-        </div>
+        {% for projeto in projetos %}
+            <div class="box">
+                <img src={{ projeto.imagem.url }}  >
+                <p class="center">{{ projeto.nome }}</p>
+                <div>
+                    <p>{{ projeto.descricao }}</p>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock main %}

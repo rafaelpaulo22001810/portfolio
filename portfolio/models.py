@@ -39,6 +39,7 @@ class Professor(models.Model):
 class Projeto(models.Model):
     nome = models.CharField(max_length=20)
     descricao = models.CharField(max_length=300)
+    imagem = models.ImageField(blank=True, upload_to='portfolio\static\portfolio\images\img_proj')
 
     def __str__(self):
         return self.nome

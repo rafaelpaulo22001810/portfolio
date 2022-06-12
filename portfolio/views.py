@@ -14,6 +14,7 @@ from .forms import CadeiraForm
 from .models import Post
 from .models import PontuacaoQuizz
 from .models import Cadeira
+from .models import Projeto
 
 matplotlib.use('Agg')
 
@@ -56,7 +57,8 @@ def editar_cadeira_page_view(request, cadeira_id):
 
 
 def projetos_page_view(request):
-    return render(request, 'portfolio/projetos.html')
+    context = {'projetos': Projeto.objects.all()}
+    return render(request, 'portfolio/projetos.html', context)
 
 
 def blog_page_view(request):

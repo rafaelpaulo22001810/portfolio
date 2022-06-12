@@ -280,4 +280,13 @@ input[type="radio"]:checked + label {
     left: 50%;
     transform: translate(-50%, 0%);
 }
-
+.weatherDisplay{
+    display: inline-flex;
+}
+.weatherDisplay p{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

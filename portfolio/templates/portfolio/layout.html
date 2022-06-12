@@ -12,8 +12,8 @@
 
         <section class="weatherMain">
             <div class="weatherDisplay">
-                <p class="temperaturaMax"></p>
                 <p class="temperaturaMin"></p>
+                <p class="temperaturaMax"></p><p class="icon"></p>
                 <p class="dataTemp"></p>
             </div>
         </section>
@@ -45,7 +45,14 @@
             .then(data => {
                 temperaturaMax.innerHTML = data['data'][0]['tMax'];
                 temperaturaMin.innerHTML = data['data'][0]['tMin'];
+                temperaturaMin.innerHTML+='º-';
                 dataTemp.innerHTML = data['data'][0]['forecastDate'];
+                if (temperaturaMax.innerHTML>25){
+                    temperaturaMax.innerHTML+='º🌞'
+                }else{
+                    temperaturaMax.innerHtml+='º⛅'
+                }
+
             })
     </script>
 

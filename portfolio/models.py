@@ -58,3 +58,17 @@ class Cadeira(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Tfc(models.Model):
+    autor = models.CharField(max_length=200)
+    orientador = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    ano = models.IntegerField()
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    imagem = models.ImageField(blank=True, upload_to='portfolio\static\portfolio\images\img_tfc')
+    relatorio = models.CharField(max_length=1000)
+    github = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.titulo[:70]

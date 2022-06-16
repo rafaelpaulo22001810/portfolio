@@ -12,10 +12,12 @@ from matplotlib import pyplot as plt
 from .forms import PostForm
 from .forms import CadeiraForm
 from .forms import ProjectForm
+from .forms import TfcForm
 from .models import Post
 from .models import PontuacaoQuizz
 from .models import Cadeira
 from .models import Projeto
+from .models import Tfc
 
 matplotlib.use('Agg')
 
@@ -178,3 +180,32 @@ def logout_page_view(request):
     return render(request, 'portfolio/login.html', {
         'message': 'Foi desconetado.'
     })
+
+
+def tfc_page_view(request):
+    context = {'tfcs': Tfc.objects.all()}
+    return render(request, 'portfolio/tfc.html', context)
+
+
+def new_tfc_page_view(request):
+    form = TfcForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:tfc'))
+
+    context = {'form': form}
+
+    return render(request, 'portfolio/newTfc.html', context)
+
+
+def editar_tfc_page_view(request, tfc_id):
+    tfc = Tfc.objects.get(pk=tfc_id)
+    form = TfcForm(request.POST or None, instance=tfc)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:tfc'))
+
+    context = {'form': form, 'tfc_id': tfc_id}
+
+    return render(request, 'portfolio/editar_Tfc.html', context)

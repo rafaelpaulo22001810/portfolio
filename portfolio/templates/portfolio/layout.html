@@ -17,6 +17,9 @@
                 <p class="dataTemp"></p>
             </div>
         </section>
+        <section>
+            <div id="relogio" onload="currentTime()" class="relogio"></div>
+        </section>
         <nav>
             <a href="{% url 'portfolio:home' %}">Home</a>
             <a href="{% url 'portfolio:licenciatura' %}">Portfolio</a>
@@ -56,10 +59,35 @@
             })
     </script>
 
+    <script>
+        function currentTime() {
+              var date = new Date();
+              var horas = date.getHours();
+              var minutos = date.getMinutes();
+              var segundos = date.getSeconds();
+
+              if (horas < 10){
+                  horas = "0" + horas;
+              }
+              if (minutos < 10){
+                  minutos = "0" + minutos;
+              }
+              if (segundos < 10){
+                  segundos = "0" + segundos;
+              }
+            document.getElementById("relogio").innerText = horas + ":" + minutos + ":" + segundos;
+            var tempo = setTimeout(function(){ currentTime() }, 1000);
+        }
+
+        currentTime();
+    </script>
+
 	<main>
         {% block main %}
 	    {% endblock main %}
     </main>
-    <footer>ULHT, 2022</footer>
+    <footer>
+        ULHT, 2022
+    </footer>
 </body>
 </html>

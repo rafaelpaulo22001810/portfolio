@@ -58,6 +58,13 @@ footer {
     align-items: center;
     bottom: 0;
 }
+.relogio{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    color: #F0FFF3;
+
+}
 .contain{
     display: flex;
     flex-flow: wrap;

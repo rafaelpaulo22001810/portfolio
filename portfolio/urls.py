@@ -18,5 +18,8 @@ urlpatterns = [
     path('editcadeira/<int:cadeira_id>', views.editar_cadeira_page_view, name='editcadeira'),
     path('newprojeto', views.new_project_page_view, name='newprojeto'),
     path('editprojeto/<int:projeto_id>', views.editar_project_page_view, name='editprojeto'),
+    path('tfc', views.tfc_page_view, name='tfc'),
+    path('newtfc', views.new_tfc_page_view, name='newtfc'),
+    path('edittfc/<int:tfc_id>', views.editar_tfc_page_view, name='edittfc'),
 
 ]

@@ -48,7 +48,6 @@ nav a {
 main {
     min-height: 85vh;
     background-color: #cbe7d9;
-    padding: 0 1em 4em 1em;
 }
 
 footer {
@@ -84,6 +83,7 @@ footer {
     position: relative;
     transition: all .4s;
     border-radius: 20px;
+    margin-bottom: 75px;
 }
 .box p{
     font-family: 'Poppins',sans-serif;

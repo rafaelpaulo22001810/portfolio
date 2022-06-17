@@ -21,5 +21,7 @@ urlpatterns = [
     path('tfc', views.tfc_page_view, name='tfc'),
     path('newtfc', views.new_tfc_page_view, name='newtfc'),
     path('edittfc/<int:tfc_id>', views.editar_tfc_page_view, name='edittfc'),
+    path('web', views.web_page_view, name='web'),
+    path('video', views.video_page_view, name='video'),
 
 ]

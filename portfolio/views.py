@@ -209,3 +209,11 @@ def editar_tfc_page_view(request, tfc_id):
     context = {'form': form, 'tfc_id': tfc_id}
 
     return render(request, 'portfolio/editar_Tfc.html', context)
+
+
+def web_page_view(request):
+    return render(request, 'portfolio/web.html')
+
+
+def video_page_view(request):
+    return render(request,'portfolio/video.html')

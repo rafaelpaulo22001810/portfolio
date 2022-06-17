@@ -11,7 +11,7 @@
                     <p>-> {{ tfc.descricao }}</p>
                     <p>-> {{ tfc.ano }}</p>
                     <p>-> Orientador: {{ tfc.orientador }}</p>
-                    <a href="{{ tfc.github }}"><img src="{% static 'portfolio/images/github.png' %}" alt="" class="boxGit"></a>
+                    <a href="{{ tfc.github }}"><img src="{% static 'portfolio/images/github.png' %}" alt="" style="width: 24px;height: 24px;bottom: 35px;left: 400px;"></a>
                 </div>
                 {% if request.user.is_authenticated %}
                     <a href="{% url 'portfolio:edittfc' tfc.id %} " class="btn edit_btn2">Editar</a>

@@ -46,8 +46,9 @@ nav a {
 
 
 main {
-  min-height: 85vh;
-  background-color: #cbe7d9;
+    min-height: 85vh;
+    background-color: #cbe7d9;
+    padding: 0 1em 4em 1em;
 }
 
 footer {

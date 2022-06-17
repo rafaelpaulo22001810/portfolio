@@ -92,8 +92,8 @@ footer {
 .boxGit{
     width: 24px;
     height: 24px;
-    bottom: 0;
-    right: 0;
+    bottom: 35px;
+    left: 400px;
 }
 .Pre_box{
     margin-top: 150px;

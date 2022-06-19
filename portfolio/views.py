@@ -75,15 +75,15 @@ def new_project_page_view(request):
     return render(request, 'portfolio/newProjeto.html', context)
 
 
-def editar_project_page_view(request, project_id):
-    projeto = Projeto.objects.get(pk=project_id)
+def editar_project_page_view(request, projeto_id):
+    projeto = Projeto.objects.get(pk=projeto_id)
     form = ProjectForm(request.POST or None, instance=projeto)
 
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('portfolio:licenciatura'))
 
-    context = {'form': form, 'projeto_id': project_id}
+    context = {'form': form, 'projeto_id': projeto_id}
 
     return render(request, 'portfolio/editar_Projeto.html', context)
 

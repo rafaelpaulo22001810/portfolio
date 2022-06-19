@@ -36,7 +36,7 @@ def licenciatura_page_view(request):
 
 
 def new_cadeira_page_view(request):
-    form = CadeiraForm(request.POST or None)
+    form = CadeiraForm(request.POST, request.FILES or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('portfolio:licenciatura'))
@@ -65,7 +65,7 @@ def projetos_page_view(request):
 
 
 def new_project_page_view(request):
-    form = ProjectForm(request.POST or None)
+    form = ProjectForm(request.POST, request.FILES or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('portfolio:projetos'))
@@ -188,7 +188,7 @@ def tfc_page_view(request):
 
 
 def new_tfc_page_view(request):
-    form = TfcForm(request.POST or None)
+    form = TfcForm(request.POST, request.FILES or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('portfolio:tfc'))

@@ -48,7 +48,7 @@ def new_cadeira_page_view(request):
 
 def editar_cadeira_page_view(request, cadeira_id):
     cadeira = Cadeira.objects.get(pk=cadeira_id)
-    form = CadeiraForm(request.POST or None, instance=cadeira)
+    form = CadeiraForm(request.POST, request.FILES or None, instance=cadeira)
 
     if form.is_valid():
         form.save()
@@ -77,7 +77,7 @@ def new_project_page_view(request):
 
 def editar_project_page_view(request, projeto_id):
     projeto = Projeto.objects.get(pk=projeto_id)
-    form = ProjectForm(request.POST or None, instance=projeto)
+    form = ProjectForm(request.POST, request.FILES or None, instance=projeto)
 
     if form.is_valid():
         form.save()
@@ -200,7 +200,7 @@ def new_tfc_page_view(request):
 
 def editar_tfc_page_view(request, tfc_id):
     tfc = Tfc.objects.get(pk=tfc_id)
-    form = TfcForm(request.POST or None, instance=tfc)
+    form = TfcForm(request.POST, request.FILES or None, instance=tfc)
 
     if form.is_valid():
         form.save()

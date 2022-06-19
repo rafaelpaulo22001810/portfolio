@@ -6,7 +6,7 @@
         <br>
         <div class="h2_blog">Editar Cadeira</div>
         <div class="newPostBox">
-            <form  action="{% url 'portfolio:editcadeira' cadeira_id %}" method="post">
+            <form  action="{% url 'portfolio:editcadeira' cadeira_id %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input type="submit" value="Postar">

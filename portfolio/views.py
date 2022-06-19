@@ -65,7 +65,7 @@ def projetos_page_view(request):
 
 
 def new_project_page_view(request):
-    form = ProjectForm(request.POST, request.FILES or None)
+    form = ProjectForm(request.POST or request.FILES or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('portfolio:projetos'))

@@ -81,7 +81,7 @@ def editar_project_page_view(request, projeto_id):
 
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('portfolio:licenciatura'))
+        return HttpResponseRedirect(reverse('portfolio:projetos'))
 
     context = {'form': form, 'projeto_id': projeto_id}
 
